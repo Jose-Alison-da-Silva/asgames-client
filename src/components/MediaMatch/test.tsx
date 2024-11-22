@@ -1,15 +1,33 @@
 import { render, screen } from '@testing-library/react'
 
+import 'jest-styled-components'
+
 import MediaMatch from '.'
 
 describe('<MediaMatch />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<MediaMatch />)
+  let desktopHeading: Element
+  let mobileHeading: Element
 
-    expect(
-      screen.getByRole('heading', { name: /MediaMatch/i })
-    ).toBeInTheDocument()
+  beforeEach(() => {
+    render(
+      <>
+        <MediaMatch greaterThan="medium">
+          <h1 data-testid="desktop">Desktop</h1>
+        </MediaMatch>
 
-    expect(container.firstChild).toMatchSnapshot()
+        <MediaMatch lessThan="medium">
+          <h1 data-testid="mobile">Mobile</h1>
+        </MediaMatch>
+      </>
+    )
+
+    desktopHeading = screen.getByTestId('desktop')
+    mobileHeading = screen.getByTestId('mobile')
+  })
+
+  it('should be hidden if no media query is passed', () => {
+    expect(desktopHeading.parentElement).toHaveStyleRule('display', 'none')
+
+    expect(mobileHeading.parentElement).toHaveStyleRule('display', 'none')
   })
 })
