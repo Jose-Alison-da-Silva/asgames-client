@@ -25,3 +25,12 @@ export const withIcon: StoryObj<ButtonProps> = {
     icon: <AddShoppingCart />
   }
 }
+
+export const asLink: StoryObj<ButtonProps> = {
+  args: {
+    size: 'large',
+    children: 'Buy now',
+    as: 'a',
+    href: '/link'
+  }
+}
