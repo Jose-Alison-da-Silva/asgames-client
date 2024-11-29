@@ -16,5 +16,35 @@ export const Default: StoryObj<BannerProps> = {
   },
   parameters: {
     layout: 'fullscreen'
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+        <Story />
+      </div>
+    )
+  ]
+}
+
+export const WithRibbon: StoryObj<BannerProps> = {
+  args: {
+    img: 'https://images.gog-statics.com/45a284386e693f1576b96d98a0023a7905d3956c6f9aa913d3fe5d09a5994bee.png',
+    title: 'Defy death',
+    subtitle: '<p>Play the new <strong>CrashLands</strong> season',
+    buttonLabel: 'Buy now',
+    buttonLink: '/games/defy-death',
+    ribbon: '20% OFF',
+    ribbonSize: 'normal',
+    ribbonColor: 'primary'
+  },
+  parameters: {
+    layout: 'fullscreen'
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+        <Story />
+      </div>
+    )
+  ]
 }
