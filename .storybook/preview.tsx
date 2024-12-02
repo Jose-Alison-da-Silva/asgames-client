@@ -16,6 +16,19 @@ const preview: Preview = {
   parameters: {
     nextjs: {
       appDirectory: true
+    },
+    backgrounds: {
+      default: 'won-light',
+      values: [
+        {
+          name: 'won-light',
+          value: theme.colors.white
+        },
+        {
+          name: 'won-dark',
+          value: theme.colors.mainBg
+        }
+      ]
     }
   }
 }
