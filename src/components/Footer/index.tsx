@@ -67,7 +67,7 @@ const Footer = () => (
         <span>Lorem, ipsum dolor.</span>
       </S.Column>
     </S.Content>
-    <S.CopyRight>Won Games 2020 © All rights reserved.</S.CopyRight>
+    <S.CopyRight>Won Games 2024 © All rights reserved.</S.CopyRight>
   </S.Wrapper>
 )
 export default Footer

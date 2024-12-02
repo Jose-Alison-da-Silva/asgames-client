@@ -1,3 +1,5 @@
+'use client'
+
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
@@ -89,7 +91,8 @@ export const MenuFull = styled.nav<MenuProps>`
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
-    position: absolute;
+    position: fixed;
+    z-index: ${theme.layers.menu};
     top: 0;
     bottom: 0;
     left: 0;
