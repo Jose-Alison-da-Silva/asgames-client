@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, InputHTMLAttributes } from 'react'
 import * as S from './styles'
 
