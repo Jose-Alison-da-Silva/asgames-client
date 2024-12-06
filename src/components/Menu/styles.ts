@@ -9,6 +9,7 @@ export const Wrapper = styled.menu`
     align-items: center;
     padding: ${theme.spacings.small} 0;
     position: relative;
+    z-index: ${theme.layers.menu};
   `}
 `
 
@@ -34,6 +35,9 @@ export const MenuGroup = styled.div`
 
 export const MenuNav = styled.div`
   ${({ theme }) => css`
+    > a {
+      text-decoration: none;
+    }
     ${media.greaterThan('medium')`
 		margin-left: ${theme.spacings.small};
 	`}
